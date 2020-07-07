@@ -2,7 +2,6 @@ require_relative "../lib/postfix_to_infix"
 
 describe "Postfix Infix Conversions" do
 
-
   {
     "a b +" => "a + b",
     "d 3 -" => "d - 3",
