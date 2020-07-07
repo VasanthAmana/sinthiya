@@ -28,5 +28,6 @@ git push origin master
 
 git pull
 
+git log
 
 // added --format documentation in .rspec file
