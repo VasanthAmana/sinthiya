@@ -1,4 +1,4 @@
-def infix_postfix(str)
+def infix_to_postfix(str)
   @precidence = {
     "*" => 2,
     "/" => 2,
@@ -34,4 +34,3 @@ end
     end
   return output.join
 end
-p infix_postfix("a + b")
