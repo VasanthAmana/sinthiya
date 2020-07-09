@@ -1,4 +1,4 @@
-def infix_postfix(str)
+def infix_to_postfix(str)
   operators = ["+","-","/","*"]
     @precidence = {
       "*" => 2,
@@ -12,13 +12,13 @@ def infix_postfix(str)
   expression.each do | char |
     if !(operators.include? (char))
       output.push(char)
-   elsif stack.empty?
+    elsif stack.empty?
          stack << char
-       elsif @precidence[stack.last] == @precidence[char]
+    elsif @precidence[stack.last] == @precidence[char]
+          output << char
+    elsif @precidence[stack.last] < @precidence[char]
           stack << char
-   elsif @precidence[stack.last] < @precidence[char]
-          stack << char
-   elsif @precidence[stack.last] > @precidence[char]
+    elsif @precidence[stack.last] > @precidence[char]
           count = 0
         stack.each do | s |
           if @precidence[s] > @precidence[char]
