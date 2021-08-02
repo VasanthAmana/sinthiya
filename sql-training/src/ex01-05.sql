@@ -4,7 +4,7 @@ select count(distinct REPLACE(title, ' - DAR', '')) from movies;
 -- Exercise 02
 select count(1) from subscribers;
 
--- Exercise 03
+-- Exercise 03 
 SELECT s.name AS "Subscriber Name", count(1) AS "User Count"
 FROM subscribers s
 INNER JOIN account_members am ON am.account_id = s.id
