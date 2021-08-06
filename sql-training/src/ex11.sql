@@ -5,7 +5,7 @@ SELECT
   facebook_page_dcs_uid, 
   fact_ts, 
   facebook_page_likes, 
-  facebook_page_likes - coalesce (lag(facebook_page_likes) OVER (partition by facebook_page_dcs_uid ORDER BY fact_ts), 0) AS difference 
+  facebook_page_likes - coalesce (lag(facebook_page_likes) OVER (partition by facebook_page_dcs_uid ORDER BY fact_ts), 0) AS deltas 
 FROM fact_facebook_page_samples
 order by facebook_page_dcs_uid,fact_ts 
 limit 5;
